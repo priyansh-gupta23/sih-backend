@@ -50,36 +50,38 @@ const buyerModel = new mongoose.Schema(
             maxLength: [10, "Contact must not be exceed 10 character long"],
         },
 
-        
-            AddressLine1: {
-                type: String,
-            },
-            AddressLine2: {
-                type: String,
-            },
-            cityName: {
-                type: String,
-                required: [true, "City name is required"],
-                minLength: [3, "City should be atleast 3 character long"],
-            },
-            stateName: {
-                type: String,
-                required: [true, "State name is required"],
-                minLength: [3, "State should be atleast 3 character long"],
-            },
-            postalCode:{
-                type :String ,
-                required:[true,"Postal code is required!!"],
-                minLenght:[3,'postalcode should have minimum of four digits'],
-            },
-            countryName:{
-                type:String,
-                required:[true,"Country Name is required."]
-            },
-        
+        AddressLine1: {
+            type: String,
+        },
+        AddressLine2: {
+            type: String,
+        },
+        cityName: {
+            type: String,
+            required: [true, "City name is required"],
+            minLength: [3, "City should be atleast 3 character long"],
+        },
+        stateName: {
+            type: String,
+            required: [true, "State name is required"],
+            minLength: [3, "State should be atleast 3 character long"],
+        },
+        postalCode: {
+            type: String,
+            required: [true, "Postal code is required!!"],
+            minLenght: [3, 'postalcode should have minimum of four digits'],
+        },
+        countryName: {
+            type: String,
+            required: [true, "Country Name is required."]
+        },
 
         avatar: {
-            type: String
+            type: Object,
+            default: {
+                fileId: "",
+                url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGVmYXVsdCUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+            },
         },
 
     },

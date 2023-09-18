@@ -11,6 +11,7 @@ const {
     buyerforgetlink,
     buyerrestpassword,
     buyerupdate,
+    buyeravatar,
 } = require("../controllers/buyerController");
 const { isAuthenticated } = require("../middlewares/auth");
 
@@ -39,9 +40,11 @@ router.get("/buyer/forget-link/:id", buyerforgetlink)
 //Post /buyer/reset-password/:buyerid
 router.post("/buyer/reset-password/:id",isAuthenticated, buyerrestpassword)
 
-
 //Post /buyer/uopdate/:buyerid
 router.post("/buyer/update/:id",isAuthenticated, buyerupdate)
+
+//Post /buyuer/avatar/:buyerid
+router.post("/buyer/avatar/:id", isAuthenticated, buyeravatar)
 
 
 module.exports = router;
